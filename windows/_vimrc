@@ -1,0 +1,44 @@
+" Vim with all enhancements
+source $VIMRUNTIME/vimrc_example.vim
+
+" Remap a few keys for Windows behavior
+source $VIMRUNTIME/mswin.vim
+
+"设置行号
+set number
+
+"设置中文帮助
+set helplang=cn
+
+set tabstop=2
+set expandtab
+set shiftwidth=2
+
+" `tabstop=2` 设置 Tab 字符的大小为 2 个空格。
+" `expandtab` 将 Tab 键转换为空格。
+" `shiftwidth=2` 设置每次缩进或展开的空格数为 2 个。
+
+call plug#begin()
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'mhinz/vim-startify'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-surround'
+Plug 'kien/ctrlp.vim'
+Plug 'github/copilot.vim'
+Plug 'nordtheme/vim'
+
+call plug#end()
+
+let mapleader = "\<space>"   "利用转义符“\”将前缀键设置为空格键
+"ctrlp插件必要配置
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+"设置过滤不进行查找的后缀名 
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|pyc)$' 
+
+"开启语法高亮
+syntax on
+"查找结果 高亮显示
+set hlsearch
+set laststatus=2    " 始终显示状态栏
